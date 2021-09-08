@@ -1,0 +1,20 @@
+ghRepo: repo_name
+boilerplates:
+  - node:
+    - dojo:
+        path: some_path_to_dojo 
+    - real:
+        path: real_node_project
+  - python:
+    - sandbox:
+        path: python_sandbox_folder_in_repo 
+    - real:
+        path: python_real_folder_in_repo 
+    - dojo:
+        path: python_real_folder_in_repo 
+  - csharp:
+    - dojo:
+        - friday_dojo:
+            path: python_real_folder_in_repo 
+        - friends_dojo:
+            path: python_real_folder_in_repo 
