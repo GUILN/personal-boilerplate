@@ -3,14 +3,15 @@ from Command.CommandHelpers import get_config_root_command
 
 # consts
 GH_REPO = "ghRepo"
-BOILERPLATE = "boilerplates"
-ROOT_COMMAND_NAME = "ROOT"
+BOILERPLATE_FOLDER = "../boilerplates.yml"
+ROOT_COMMAND_NAME = "root"
 
-def run_program(file_name: str):
-    with open(f'../{file_name}.yml') as fh:
+
+def run_program():
+    with open(BOILERPLATE_FOLDER) as fh:
         read_data = yaml.safe_load(fh)
-
-    root_command = get_config_root_command(read_data[BOILERPLATE])
+    print(read_data)
+    root_command = get_config_root_command(read_data['boilerplates'])
     # Printing all commands
     print(root_command.print_all_commands())
 
@@ -21,7 +22,7 @@ def run_program(file_name: str):
 
 
 def __main__():
-    run_program('boilerplates')
+    run_program()
 
 if __name__ == "__main__":
     __main__()
