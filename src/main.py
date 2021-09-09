@@ -1,5 +1,7 @@
 import yaml
+
 from Command.command_helpers import get_config_root_command
+from Configuration.configuration_factory import ConfigurationFactory
 
 # consts
 GH_REPO = "ghRepo"
@@ -22,6 +24,8 @@ def run_program():
 
 
 def __main__():
+    configuration = ConfigurationFactory.create_configuration('prod')
+    print(configuration.get_access_token())
     run_program()
 
 if __name__ == "__main__":
