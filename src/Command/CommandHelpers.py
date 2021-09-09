@@ -2,7 +2,7 @@ from .Command import Command
 
 
 PATH_PROPERTY = 'path'
-ROOT_COMMAND_NAME = 'root'
+ROOT_COMMAND_NAME = '*'
 
 def traverse_config_file(config_file, root_command: 'Command'):
     if not isinstance(config_file, dict) and not isinstance(config_file, list):
