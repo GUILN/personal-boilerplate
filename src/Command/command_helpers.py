@@ -1,4 +1,4 @@
-from .Command import Command
+from .command import Command
 
 
 PATH_PROPERTY = 'path'

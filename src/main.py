@@ -1,5 +1,5 @@
 import yaml
-from Command.CommandHelpers import get_config_root_command
+from Command.command_helpers import get_config_root_command
 
 # consts
 GH_REPO = "ghRepo"
