@@ -2,6 +2,7 @@ import yaml
 
 from Command.command_helpers import get_config_root_command
 from Configuration.configuration_factory import ConfigurationFactory
+from Connectors.github_connector import GithubConnector
 
 # consts
 GH_REPO = "ghRepo"
@@ -25,6 +26,8 @@ def run_program():
 
 def __main__():
     configuration = ConfigurationFactory.create_configuration('prod')
+    github_connector = GithubConnector(configuration)
+    print(f'THis is the configuration {github_connector.get_repo("algorithms")}')
     print(configuration.get_access_token())
     run_program()
 
