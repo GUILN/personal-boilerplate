@@ -1,9 +1,10 @@
 import os
 
-ENV_ACCESS_TOKEN = 'B_ACCESS_TOKEN'
+ENV_ACCESS_TOKEN = 'B_PLATE_ACCESS_TOKEN'
+ENV_REPO_NAME = 'B_PLATE_REPO_NAME'
+
 class Configuration:
     def __init__(self):
         self.access_token = os.environ[ENV_ACCESS_TOKEN]
+        self.boilerplate_repo_name = os.environ[ENV_ACCESS_TOKEN]
 
-    def get_access_token(self) -> str:
-        return self.access_token
