@@ -38,7 +38,9 @@ def get_boilerplate(boilerplate_path: str):
     boilerplate_path = f'*-{boilerplate_path}'
     root_command = get_root_command()
     path = root_command.get_path(boilerplate_path.split('-'))
-    print(path)
+    print('Downloading boilerplate contet...')
+    github_connector = GithubConnector(configuration)
+    github_connector.download_boilerplate(path)
 
 def get_root_command() -> Command:
     read_data = get_from_autoconf_file()

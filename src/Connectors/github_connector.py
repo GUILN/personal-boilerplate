@@ -26,10 +26,9 @@ class GithubConnector:
                 try:
                     file_content = self.boilerplate_repository.get_contents(content.path)
                     file_data = base64.b64decode(file_content.content)
-                    write_out_file(content.name, file_data.decode)
+                    write_out_file(content.name, file_data.decode())
                 except (GithubException, IOError) as e:
                     raise(Exception(f'Error in download_boilerplate when processing: {content.path} - {e}'))
-        pass
 
     def __traverse_repo(self, repo, dir_name: str, root_name: str = "*") -> dict:
         file_contents = repo.get_contents(dir_name)
