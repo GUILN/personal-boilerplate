@@ -3,16 +3,19 @@ from Command.command_helpers import get_config_root_command
 from Configuration.configuration_factory import ConfigurationFactory
 from Connectors.github_connector import GithubConnector
 
-UPDATE_FROM_REPO = False
+UPDATE_FROM_REPO = True
 
 configuration = ConfigurationFactory.create_configuration('prod')
 
 def update_autoconf_file():
     github_connector = GithubConnector(configuration)
 
+    print('Fetching github boilerplate repo...')
     read_data = github_connector.get_boilerplates_structure() 
+    print('Updating boilerplate data...')
     with open(configuration.boilerplates_file, "w+b") as fp:
         pickle.dump(read_data, fp)
+    print('Boilerplates has been updated!')
 
 
 def get_from_autoconf_file() -> list:
