@@ -1,3 +1,0 @@
-export B_PLATE_ACCESS_TOKEN='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'
-export B_PLATE_REPO_NAME='boilerplates'
-
