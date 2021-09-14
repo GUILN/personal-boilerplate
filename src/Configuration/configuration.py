@@ -7,7 +7,6 @@ home_dir = os.environ.get('HOME')
 repo_name = os.environ.get(ENV_REPO_NAME)
 token = os.environ.get(ENV_ACCESS_TOKEN)
 
-print(token)
 
 class Configuration:
     def __init__(self):

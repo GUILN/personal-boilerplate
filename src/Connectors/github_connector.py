@@ -1,3 +1,4 @@
+import os
 import base64
 from github import Github, Repository
 from github.GithubException import GithubException
@@ -24,6 +25,8 @@ class GithubConnector:
                 self.download_boilerplate(content.path)
             else:
                 try:
+                    print(f'Downloading file {content.name}')
+                    print(f'path is {content.path}')
                     file_content = self.boilerplate_repository.get_contents(content.path)
                     file_data = base64.b64decode(file_content.content)
                     write_out_file(content.name, file_data.decode())
