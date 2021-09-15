@@ -21,8 +21,6 @@ class GithubConnector:
         print(f'This is the parameter path: {path_to_boilerplate}')
         for content in contents:
             if content.type == 'dir':
-
-                os.makedirs(content.path)
                 print(f'This is a directory {content.path}')
                 self.download_boilerplate(content.path) 
             else:
@@ -30,7 +28,7 @@ class GithubConnector:
                     print(f'Downloading file {content.path}') 
                     file_content = self.boilerplate_repository.get_contents(content.path) 
                     file_data = base64.b64decode(file_content.content)
-                    write_out_file(content.name, file_data.decode())
+                    write_out_file(content.path, file_data.decode())
                 except (GithubException, IOError) as e:
                     raise(Exception(f'Error in download_boilerplate when processing: {content.path} - {e}')) 
 

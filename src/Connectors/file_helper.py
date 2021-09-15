@@ -1,8 +1,13 @@
 import os 
 
 def write_out_file(file_name: str, file_content: str):
-    with open(file_name, "w") as file_out:
-       file_out.write(file_content) 
+    try:
+        with open(file_name, "w") as file_out:
+            file_out.write(file_content) 
+    except:
+        os.makedirs(os.path.dirname(file_name)) 
+        with open(file_name, "w") as file_out:
+            file_out.write(file_content) 
 
 def get_relative_path(actual_path: str, common_path:str) -> str: 
     print(f'actual path {os.path.dirname(actual_path)}')
