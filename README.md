@@ -16,6 +16,8 @@ Please to install run:
     B_PLATE_ACCESS_TOKEN (your github Personal Access Token)
     B_PLATE_REPO_NAME => Your boilerplate repo name (can be private)
 - Set the path contained in `install.sh` to `PATH` 
+- Set the hashbang to the `/src/boilerplate.py` 
+- Rename `/src/boilerplate.py` to `/src/boilerplate.py` 
 
 # Your boilerplate repo published on git should have folders containg: 
 `.boilerplate` file, to indicate that the folder contains a boilerplate 
